@@ -1,25 +1,25 @@
-import {useState, useMemo, ChangeEvent, MouseEvent} from 'react';
-import {IProductItem, IProductVariant} from 'boundless-api-client';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons/faCartPlus';
+import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
+import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IProductItem, IProductVariant } from 'boundless-api-client';
 import clsx from 'clsx';
-import {useAppDispatch} from '../../hooks/redux';
-import {addItem2Cart} from '../../redux/actions/cart';
-import {getPriceForTpl, IPriceForTpl} from '../../lib/product';
 import currency from 'currency.js';
-import {faPlus} from '@fortawesome/free-solid-svg-icons/faPlus';
-import {faMinus} from '@fortawesome/free-solid-svg-icons/faMinus';
-import {faCartPlus} from '@fortawesome/free-solid-svg-icons/faCartPlus';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { ChangeEvent, MouseEvent, useMemo, useState } from 'react';
+import { useAppDispatch } from '../../hooks/redux';
 import useFormatCurrency from '../../hooks/useFormatCurrency';
+import { getPriceForTpl, IPriceForTpl } from '../../lib/product';
+import { addItem2Cart } from '../../redux/actions/cart';
 
-export default function ProductPriceAndBuy({product, selectedVariant, setError, onAddedToCart}: IPriceAndBuyProps) {
+export default function ProductPriceAndBuy({ product, selectedVariant, setError, onAddedToCart }: IPriceAndBuyProps) {
 	const dispatch = useAppDispatch();
 	const [qty, setQty] = useState<number>(1);
-	const {formatCurrency} = useFormatCurrency();
+	const { formatCurrency } = useFormatCurrency();
 
-	const {price, benefit, isInStock} = useMemo(() => {
+	const { price, benefit, isInStock } = useMemo(() => {
 		let price: IPriceForTpl, benefit: number | null = null;
 		if (selectedVariant) {
-			price = {price: selectedVariant.price, oldPrice: selectedVariant.price_old};
+			price = { price: selectedVariant.price, oldPrice: selectedVariant.price_old };
 		} else {
 			price = getPriceForTpl(product.price);
 		}
@@ -30,7 +30,7 @@ export default function ProductPriceAndBuy({product, selectedVariant, setError, 
 
 		const isInStock = selectedVariant ? selectedVariant.in_stock : product.in_stock;
 
-		return {price, benefit, isInStock};
+		return { price, benefit, isInStock };
 	}, [product, selectedVariant]);
 
 	const onBuyBtnClicked = (e: MouseEvent<HTMLButtonElement>) => {
@@ -53,23 +53,20 @@ export default function ProductPriceAndBuy({product, selectedVariant, setError, 
 		<div className='price-and-buy'>
 			{price.price && <p className={'price-and-buy__price'}>
 				{price.isFrom && <span className={'price-and-buy__from'}>From:</span>}
-				<span className={clsx('price-and-buy__current', {'has-old': price.oldPrice})}>
+				<span className={clsx('price-and-buy__current', { 'has-old': price.oldPrice })}>
 					{formatCurrency(price.price)}
 				</span>
 				{price.oldPrice && <span className={'price-and-buy__old'}>{formatCurrency(price.oldPrice)}</span>}
 			</p>}
 			{benefit && <p className={'price-and-buy__benefit'}>
-				<label className={'price-and-buy__benefit-label'}>You save:</label>
+				<label className={'price-and-buy__benefit-label'}>Bạn tiết kiệm được:</label>
 				<span className={'price-and-buy__benefit-value'}>{formatCurrency(benefit)}</span>
 			</p>}
 			{(!product.has_variants || selectedVariant) && <>
-				<p className={clsx('price-and-buy__stock', {'in': isInStock, 'out': !isInStock})}>
-					{isInStock && 'In stock'}
-					{!isInStock && 'Out of stock'}
+				<p className={clsx('price-and-buy__stock', { 'in': isInStock, 'out': !isInStock })}>
+					{isInStock && 'Còn hàng'}
+					{!isInStock && 'Hết hàng'}
 				</p>
-				{(product.sku || selectedVariant?.sku) && <p>
-					SKU: <span className='text-muted'>{selectedVariant?.sku || product.sku}</span>
-				</p>}
 			</>}
 			{isInStock !== false && <div className={'price-and-buy__2-cart'}>
 				<PriceAndBuyQty qty={qty}
@@ -77,10 +74,10 @@ export default function ProductPriceAndBuy({product, selectedVariant, setError, 
 				/>
 				<div className={'price-and-buy__btns'}>
 					<button type={'button'}
-						className={'btn btn-action btn-anim btn-lg'}
+						className={'btn btn-action btn-anim btn-md'}
 						onClick={onBuyBtnClicked}
 					>
-						<FontAwesomeIcon icon={faCartPlus} /> Buy
+						<FontAwesomeIcon icon={faCartPlus} /> Mua
 					</button>
 				</div>
 			</div>}
@@ -95,7 +92,7 @@ interface IPriceAndBuyProps {
 	onAddedToCart?: (itemId: number, qty: number) => void;
 }
 
-const PriceAndBuyQty = ({qty, setQty}: {qty: number, setQty: (value: number) => void}) => {
+const PriceAndBuyQty = ({ qty, setQty }: { qty: number, setQty: (value: number) => void }) => {
 	const onChange = (e: ChangeEvent<HTMLInputElement>) => setQty(parseInt(e.target.value) || 1);
 	const onBtnClicked = (diff: number, e: MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();

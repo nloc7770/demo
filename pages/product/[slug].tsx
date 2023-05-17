@@ -79,7 +79,7 @@ export default function ProductPage({data: {product, categoryParents, mainMenu, 
 								size={product.props.size}
 							/>
 							<hr className='product-page__hr' />
-							<ProductShipping />
+							{/* <ProductShipping /> */}
 						</div>
 					</div>
 					{product.text.description && <article itemProp='description'
@@ -89,12 +89,7 @@ export default function ProductPage({data: {product, categoryParents, mainMenu, 
 				</div>
 				<ProductsSliderByQuery
 					query={similarQuery as IGetProductsParams}
-					title='Similar products'
-					wrapperClassName='page-block'
-				/>
-				<ProductsSliderByQuery
-					query={relatedQuery as IGetProductsParams}
-					title='Frequently Bought Together'
+					title='Sản phẩm tương tự'
 					wrapperClassName='page-block'
 				/>
 			</div>

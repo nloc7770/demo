@@ -44,7 +44,7 @@ export default function CallToOrder() {
 			<div className='container call-to-order__container'>
 				<div className={clsx('call-to-order', {opened: show, hiding: hiding})} onClick={(e) => e.stopPropagation()}>
 					<h5 className={'call-to-order__header mb-3'}>
-						Product added to cart
+						Đã thêm sản phẩm vào giỏ hàng
 						<button className='btn-close btn-sm' onClick={hide} />
 					</h5>
 					{item &&
@@ -70,7 +70,7 @@ export default function CallToOrder() {
 					<div className='text-end'>
 						<Link href='/cart'>
 							<a className='btn btn-action btn-anim'>
-								<FontAwesomeIcon icon={faCheck} /> Place an order
+								<FontAwesomeIcon icon={faCheck} /> Thanh toán
 							</a>
 						</Link>
 					</div>

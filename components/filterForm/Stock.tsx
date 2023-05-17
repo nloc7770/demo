@@ -1,6 +1,6 @@
-import {IFilterFieldProps} from '../FilterForm';
+import { IFilterFieldProps } from '../FilterForm';
 
-export default function Stock({onChange, values}: IFilterFieldProps) {
+export default function Stock({ onChange, values }: IFilterFieldProps) {
 	return (
 		<div className={'mb-3'}>
 			<label className='form-label'>Stock</label>
@@ -10,10 +10,10 @@ export default function Stock({onChange, values}: IFilterFieldProps) {
 						type='checkbox'
 						value={'1'}
 						name={'in_stock'}
-						onChange={(e) => onChange({in_stock: e.target.checked ? '1' : ''})}
+						onChange={(e) => onChange({ in_stock: e.target.checked ? '1' : '' })}
 						checked={values.in_stock == '1'}
 					/>
-					In stock
+					Còn hàng
 				</label>
 			</div>
 

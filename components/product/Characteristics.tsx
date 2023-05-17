@@ -13,7 +13,7 @@ export default function ProductCharacteristics({characteristics, manufacturer, s
 				<React.Fragment key={characteristic.id}>
 					{characteristic.is_folder
 						? <div className='product-attrs__group'>
-							<h3 className='product-attrs__group-header'>{characteristic.title}</h3>
+							<h3 className='product-attrs__group-header'>Chi tiết máy</h3>
 							{characteristic.children?.map(child => (
 								<CharacteristicItem characteristic={child} key={child.id} />
 							))}

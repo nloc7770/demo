@@ -113,44 +113,6 @@ export default function FilterForm({filterFields, queryParams, categoryId, onSea
 							key={i}
 							idsPrefix={idsPrefix}
 						/>;
-
-					case TFilterFieldType.brand:
-						return <BrandSelect field={filterField}
-							onChange={onChange}
-							values={values}
-							displayLimit={DEFAULT_DISPLAY_LIMIT}
-							key={i}
-							idsPrefix={idsPrefix}
-						/>;
-
-					case TFilterFieldType.availability:
-						return <Stock field={filterField}
-							onChange={onChange}
-							values={values}
-							key={i}
-							idsPrefix={idsPrefix}
-						/>;
-
-					case TFilterFieldType.characteristic: {
-						if (isMultiCaseType(filterField.characteristic!.type)) {
-							return <MultipleSelectCharacteristic
-								field={filterField}
-								onChange={onChange}
-								values={values}
-								displayLimit={DEFAULT_DISPLAY_LIMIT}
-								key={i}
-								idsPrefix={idsPrefix}
-							/>;
-						} else {
-							return <TextCharacteristic
-								field={filterField}
-								onChange={onChange}
-								values={values}
-								key={i}
-								idsPrefix={idsPrefix}
-							/>;
-						}
-					}
 				}
 			})}
 			<div className='category-filters__actions'>
@@ -159,11 +121,11 @@ export default function FilterForm({filterFields, queryParams, categoryId, onSea
 						className='btn btn-secondary'
 						onClick={onClear}
 						disabled={isFetching}
-					>Clear</button>
+					>Làm mới</button>
 					<button type='submit'
 						className='btn btn-action'
 						disabled={!hasChanged || isFetching}
-					>{getSubmitLabel(hasChanged, isFetching, preSearchResult)}</button>
+					>Tìm kiếm</button>
 				</div>
 			</div>
 		</form>

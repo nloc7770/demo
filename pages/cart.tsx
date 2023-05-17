@@ -32,7 +32,7 @@ export default function CartPage({mainMenu, footerMenu, basicSettings}: ICartPag
 				<div className='cart-page row'>
 					<div className='col-lg-8 offset-lg-2'>
 						{router.query.error && <div className={'alert alert-danger'} role={'alert'}>{router.query.error}</div>}
-						<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Shopping cart</h1>
+						<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Giỏ hàng</h1>
 						<div className='cart-page__content'>
 							{(loading || cartInited === TCartInited.processing)
 								? <CartLoader />
@@ -40,11 +40,11 @@ export default function CartPage({mainMenu, footerMenu, basicSettings}: ICartPag
 									? <CartItems items={items} setItems={setItems} total={total}/>
 									: <>
 										<p className='cart-page__warning'>
-											Your shopping cart is empty.
+											Giỏ hàng đang trống!
 										</p>
 										<p className='cart-page__warning'>
 											<Link href='/'>
-												<a className='btn btn-success'>Go shopping!</a>
+												<a className='btn btn-success'>Mua sắm ngay!</a>
 											</Link>
 										</p>
 									</>}

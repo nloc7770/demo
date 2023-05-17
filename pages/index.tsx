@@ -30,7 +30,7 @@ export default function IndexPage({products, mainMenu, footerMenu, basicSettings
 		<MainLayout mainMenu={mainMenu} footerMenu={footerMenu} basicSettings={basicSettings}>
 			<div className='container-xxl'>
 				<MainPageSlider />
-				<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Boundless store</h1>
+				<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Sản phẩm nổi bật</h1>
 				<ProductsList
 					products={products}
 					className={'page-block'}
@@ -40,17 +40,17 @@ export default function IndexPage({products, mainMenu, footerMenu, basicSettings
 			<TextWithIcons
 				columns={[
 					{
-						icon:  <FontAwesomeIcon icon={faBug} className={'text-with-icons__icon'} />,
+						icon:  "",
 						title: 'Does not slip in the hands',
 						comment: 'Anti-slip coating - for reliability.'
 					},
 					{
-						icon:  <FontAwesomeIcon icon={faShieldAlt} className={'text-with-icons__icon'} />,
+						icon: "",
 						title: 'Extra phone protection',
 						comment: 'Anti-slip coating - for reliability.'
 					},
 					{
-						icon:  <FontAwesomeIcon icon={faSmile} className={'text-with-icons__icon'} />,
+						icon:  "",
 						title: 'Looks nice',
 						comment: 'With our cases your phone look even better than without.'
 					},
@@ -59,36 +59,18 @@ export default function IndexPage({products, mainMenu, footerMenu, basicSettings
 				className={'page-block'}
 			/>
 			<div className='container-xxl'>
+				<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Iphone</h1>
 				<ProductsSliderByQuery
-					query={{collection: ['main-page'], sort: 'in_collection'}}
-					title={'Special offers:'}
+					query={{ collection: ['iphone'], sort: 'in_collection' }}
 					wrapperClassName='page-block'
 				/>
-				<div className={'page-block'}>
-					<h2 className={'text-center mb-4'}>Our customers love us:</h2>
-					<Reviews
-						reviews={[
-							{
-								image: <img src={reviewWoman1.src} className={'reviews__img'} />,
-								title: 'Amanda',
-								jobTitle: 'CEO reseller corp',
-								comment: 'I like working with the wholesales team. We are thankful for your great service!'
-							},
-							{
-								image: <img src={reviewMan1.src} className={'reviews__img'} />,
-								title: 'Jack',
-								jobTitle: 'Frequent buyer',
-								comment: 'I like the quality and the quick shipping.'
-							},
-							{
-								image: <img src={reviewMan2.src} className={'reviews__img'} />,
-								title: 'Dave',
-								jobTitle: 'Founder at Startup',
-								comment: 'I love how the things are going!'
-							},
-						]}
-					/>
-				</div>
+			</div>
+			<div className='container-xxl'>
+				<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Samsung</h1>
+				<ProductsSliderByQuery
+					query={{ collection: ['samsung'], sort: 'in_collection' }}
+					wrapperClassName='page-block'
+				/>
 			</div>
 		</MainLayout>
 	);
@@ -96,7 +78,8 @@ export default function IndexPage({products, mainMenu, footerMenu, basicSettings
 
 export const getServerSideProps: GetServerSideProps<IIndexPageProps> = async () => {
 	const categoryTree = await apiClient.catalog.getCategoryTree({menu: 'category'});
-	const {products} = await apiClient.catalog.getProducts({collection: ['main-page'], sort: 'in_collection'});
+	const { products } = await apiClient.catalog.getProducts({ collection: ['main-page'], sort: 'in_collection' });
+	
 	const basicSettings = await apiClient.system.fetchSettings(['system.locale', 'system.currency']) as IBasicSettings;
 
 	const menus = makeAllMenus({categoryTree});
@@ -122,7 +105,7 @@ function 	MainPageSlider() {
 		{
 			'img': mobileSlider1Img.src,
 			'link': '',
-			'caption': 'Decorate your phone with our cases!',
+			'caption': '',
 			'captionPosition': 'bottom',
 			'useFilling': true,
 			'fillingColor': '#000000',
@@ -131,7 +114,7 @@ function 	MainPageSlider() {
 		{
 			'img': mobileSlider2Img.src,
 			'link': '',
-			'caption': 'Pray not for easy lives, pray to be stronger men.',
+			'caption': '',
 			'captionPosition': 'bottom',
 			'useFilling': true,
 			'fillingColor': '#000000',

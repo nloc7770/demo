@@ -1,7 +1,6 @@
-import {faFacebook} from '@fortawesome/free-brands-svg-icons/faFacebook';
-import {faInstagram} from '@fortawesome/free-brands-svg-icons/faInstagram';
-import {faTwitter} from '@fortawesome/free-brands-svg-icons/faTwitter';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons/faFacebook';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function SocialButtons() {
 	return (
@@ -10,22 +9,17 @@ export default function SocialButtons() {
 			<div className='page-footer__social-buttons'>
 				<div className='page-footer__social-button'>
 					<a className='page-footer__social-link' target='_blank' href='https://fb.com'>
-						<FontAwesomeIcon className='social-icon' icon={faFacebook}/>
+						<FontAwesomeIcon className='social-icon' icon={faFacebook} />
 					</a>
 				</div>
 				<div className='page-footer__social-button'>
 					<a className='page-footer__social-link' target='_blank' href='https://instagram.com'>
-						<FontAwesomeIcon className='social-icon' icon={faInstagram}/>
-					</a>
-				</div>
-				<div className='page-footer__social-button'>
-					<a className='page-footer__social-link' target='_blank' href='https://twitter.com'>
-						<FontAwesomeIcon className='social-icon' icon={faTwitter}/>
+						<FontAwesomeIcon className='social-icon' icon={faInstagram} />
 					</a>
 				</div>
 			</div>
 			<p className='page-footer__social-buttons company-info'>
-				All rights reserved. © Boundless-Commerce
+				All rights reserved. ©locnd
 			</p>
 		</>
 	);

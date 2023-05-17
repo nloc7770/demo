@@ -68,14 +68,14 @@ export default function CategoryPage({data}: InferGetServerSidePropsType<typeof 
 				<div className='row'>
 					<div className='category-sidebar__wrapper col-md-4 col-lg-3'>
 						<CategorySidebar category={category} />
-						{(category.filter && Array.isArray(category.filter?.fields) && category.filter.fields.length > 0) &&
+						{/* {(category.filter && Array.isArray(category.filter?.fields) && category.filter.fields.length > 0) &&
 						<FilterForm
 							filterFields={category.filter.fields}
 							queryParams={productsQuery}
 							categoryId={category.category_id}
 							onSearch={onCollectionChange}
 							idsPrefix='desk_'
-						/>}
+						/>} */}
 					</div>
 					<div className='col-md-8 col-lg-9'>
 						<BreadCrumbs items={breadcrumbItems} />
@@ -104,14 +104,14 @@ export default function CategoryPage({data}: InferGetServerSidePropsType<typeof 
 				setShow={setShowModal}
 			>
 				<CategorySidebar category={category} />
-				{(category.filter && Array.isArray(category.filter?.fields) && category.filter.fields.length > 0) &&
+				{/* {(category.filter && Array.isArray(category.filter?.fields) && category.filter.fields.length > 0) &&
 				<FilterForm
 					filterFields={category.filter.fields}
 					queryParams={productsQuery}
 					categoryId={category.category_id}
 					onSearch={onCollectionChange}
 					idsPrefix='mobile_'
-				/>}
+				/>} */}
 			</FiltersModal>
 		</MainLayout>
 	);

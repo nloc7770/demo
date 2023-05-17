@@ -5,9 +5,9 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSortAmountDown, faSortAmountDownAlt} from '@fortawesome/free-solid-svg-icons';
 
 const sortFields = [
-	{id: 1, title: 'Default', order: false, alias: 'default'},
-	{id: 2, title: 'By title', order: true, alias: 'title'},
-	{id: 3, title: 'By price', order: true, alias: 'price'},
+	{id: 1, title: 'Mặc định', order: false, alias: 'default'},
+	{id: 2, title: 'Theo tiêu đề', order: true, alias: 'title'},
+	{id: 3, title: 'Theo giá', order: true, alias: 'price'},
 ];
 
 export default function SortButtons({params, onSort, className}: {params: TQuery, onSort: (query: TQuery) => void, className?: string}) {
@@ -44,7 +44,7 @@ export default function SortButtons({params, onSort, className}: {params: TQuery
 
 	return (
 		<div className={clsx('sort-buttons', className)}>
-			<label className='small me-2'>Sort by:</label>
+			<label className='small me-2'>Sắp xếp theo:</label>
 			<ul className='sort-buttons__list list-unstyled'>
 				{sortFields.map(field => {
 					const isActive = activeId === field.id;

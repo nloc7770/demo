@@ -26,13 +26,13 @@ export default function ThankYouPage({mainMenu, footerMenu}: IProps) {
 	}
 
 	return (
-		<MainLayout title={'Thank you for your order!'}
+		<MainLayout title={'Cảm ơn đã sử dụng dịch vụ của chúng tôi!'}
 								mainMenu={mainMenu}
 								footerMenu={footerMenu}
 								noIndex
 		>
 			<div className={'container'}>
-				<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Thank you for your order!</h1>
+				<h1 className='page-heading page-heading_h1  page-heading_m-h1'>Cảm ơn đã sử dụng dịch vụ của chúng tôi!</h1>
 				<div ref={checkoutRef} />
 			</div>
 		</MainLayout>

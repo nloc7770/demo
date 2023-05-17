@@ -1,24 +1,23 @@
-import {IProduct} from 'boundless-api-client';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons/faCartPlus';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IProduct, TThumbRatio } from 'boundless-api-client';
 import clsx from 'clsx';
-import {useAppDispatch} from '../../hooks/redux';
-import {addItem2Cart} from '../../redux/actions/cart';
-import {getProductUrl} from '../../lib/urls';
 import Link from 'next/link';
-import ProductLabels from '../product/Labels';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCartPlus} from '@fortawesome/free-solid-svg-icons/faCartPlus';
+import { useAppDispatch } from '../../hooks/redux';
+import { productImgRatio } from '../../lib/imgs';
+import { getProductUrl } from '../../lib/urls';
+import { addItem2Cart } from '../../redux/actions/cart';
 import NoImage from '../NoImage';
-import {productImgRatio} from '../../lib/imgs';
-import {TThumbRatio} from 'boundless-api-client';
-import ProductPrice from '../productsList/ProductPrice';
+import ProductLabels from '../product/Labels';
 import ProductListImage from '../productsList/ProductImage';
+import ProductPrice from '../productsList/ProductPrice';
 
-export default function SliderProductItem({product}: {product: IProduct}) {
+export default function SliderProductItem({ product }: { product: IProduct }) {
 	const productUrl = getProductUrl(product);
 
 	return (
 		<div
-			className={clsx('products-slider__product', {'in-stock': product.in_stock, 'out-of-stock': !product.in_stock})}
+			className={clsx('products-slider__product', { 'in-stock': product.in_stock, 'out-of-stock': !product.in_stock })}
 			data-id={product.product_id}
 		>
 			<div className='products-slider__product-wrapper'>
@@ -40,7 +39,7 @@ export default function SliderProductItem({product}: {product: IProduct}) {
 	);
 }
 
-function Product2Cart({product}: {product: IProduct}) {
+function Product2Cart({ product }: { product: IProduct }) {
 	const dispatch = useAppDispatch();
 	const onAddToCart = () => dispatch(addItem2Cart(product.item_id, 1));
 
@@ -54,14 +53,14 @@ function Product2Cart({product}: {product: IProduct}) {
 				>
 					<FontAwesomeIcon icon={faCartPlus} /> Add to cart
 				</button>
-				: <span className={'text-muted'}>Out of stock</span>
+				: <span className={'text-muted'}>Hết hàng</span>
 			}
 		</div>
 	);
 }
 
-function ProductImage({product, productUrl}: {product: IProduct, productUrl: string}) {
-	const img = product.images!.find(({is_default}) => is_default);
+function ProductImage({ product, productUrl }: { product: IProduct, productUrl: string }) {
+	const img = product.images!.find(({ is_default }) => is_default);
 
 	return (
 		<Link href={productUrl}>

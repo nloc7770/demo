@@ -75,7 +75,7 @@ export default function CartRow({item, rmItem, onQtyChange}: ICartRowProps) {
 					className='btn btn-sm btn-outline-secondary'
 					onClick={rmItem}
 				>
-					Remove
+					Xoá
 				</button>
 			</div>
 		</div >
