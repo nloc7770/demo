@@ -1,15 +1,15 @@
-import {useRef} from 'react';
-import {IProduct} from 'boundless-api-client';
-import {Swiper, SwiperProps, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Navigation, Scrollbar} from 'swiper';
-import SliderProductItem from './productsSlider/SliderProductItem';
-import ProductItemLoader from './productsSlider/ProductItemLoader';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IProduct } from 'boundless-api-client';
 import clsx from 'clsx';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faChevronLeft} from '@fortawesome/free-solid-svg-icons/faChevronLeft';
-import {faChevronRight} from '@fortawesome/free-solid-svg-icons/faChevronRight';
+import { useRef } from 'react';
+import SwiperCore, { Navigation, Scrollbar } from 'swiper';
+import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
+import ProductItemLoader from './productsSlider/ProductItemLoader';
+import SliderProductItem from './productsSlider/SliderProductItem';
 
-export default function ProductsSlider({products, loading, className, swiperProps}: ProductsSliderProps) {
+export default function ProductsSlider({ products, loading, className, swiperProps }: ProductsSliderProps) {
 	const swiper = useRef<SwiperCore | null>(null);
 
 	return (
@@ -42,7 +42,7 @@ export default function ProductsSlider({products, loading, className, swiperProp
 					nextEl: '.products-slider__next'
 				}}
 				onSwiper={(instance) => swiper.current = instance}
-				scrollbar={{draggable: true}}
+				scrollbar={{ draggable: true }}
 				slidesPerView={1}
 				spaceBetween={20}
 				{...(swiperProps || {})}
@@ -59,8 +59,8 @@ export default function ProductsSlider({products, loading, className, swiperProp
 						</SwiperSlide>
 					)}
 			</Swiper>
-			<a href='#' className='products-slider__prev'><FontAwesomeIcon icon={faChevronLeft} size={'lg'}/></a>
-			<a href='#' className='products-slider__next'><FontAwesomeIcon icon={faChevronRight} size={'lg'}/></a>
+			<a href='#' className='products-slider__prev'><FontAwesomeIcon icon={faChevronLeft} size={'lg'} /></a>
+			<a href='#' className='products-slider__next'><FontAwesomeIcon icon={faChevronRight} size={'lg'} /></a>
 		</div>
 	);
 }
