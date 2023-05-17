@@ -45,6 +45,7 @@ export const getServerSideProps: GetServerSideProps = async ({res}) => {
 	};
 };
 
+
 function appendUrl(xmlParent: xmlBuilder.XMLElement, url: string, folder: string = '') {
 	const xmlUrl = xmlParent.ele('url');
 	const baseUrl = process.env.BOUNDLESS_BASE_URL || '';
