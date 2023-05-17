@@ -18,10 +18,7 @@
 		"ecmaVersion": 2019,
 		"sourceType": "module"
 	},
-	"plugins": [
-		"@typescript-eslint",
-		"react-hooks"
-	],
+	"plugins": ["@typescript-eslint", "react-hooks"],
 	"rules": {
 		"semi": ["error", "always"],
 		"quotes": ["error", "single"],
@@ -33,6 +30,8 @@
 		"@typescript-eslint/no-unused-vars": "warn",
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",
+		"react/no-unescaped-entities": "off",
+		"@next/next/no-page-custom-font": "off",
 		"jsx-quotes": ["error", "prefer-single"]
 	}
 }
