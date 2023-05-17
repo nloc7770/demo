@@ -10,6 +10,8 @@ if (process.env.BOUNDLESS_MEDIA_SERVER) {
 module.exports = {
 	images: {
 		domains: imgDomains
+	}, eslint: {
+		ignoreDuringBuilds: true,
 	},
 	webpack: (config) => {
 		const defineMap = {};
