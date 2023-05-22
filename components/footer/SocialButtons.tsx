@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function SocialButtons() {
 	return (
 		<>
-			<h3 className='page-footer__header'>Follow us</h3>
+			<h3 className='page-footer__header'>Theo dõi</h3>
 			<div className='page-footer__social-buttons'>
 				<div className='page-footer__social-button'>
 					<a className='page-footer__social-link' target='_blank' href='https://fb.com'>
@@ -19,7 +19,7 @@ export default function SocialButtons() {
 				</div>
 			</div>
 			<p className='page-footer__social-buttons company-info'>
-				All rights reserved. ©locnd
+				Bản quyền © locnd
 			</p>
 		</>
 	);

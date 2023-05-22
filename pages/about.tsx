@@ -14,11 +14,11 @@ export default function ShippingPage({ mainMenu, footerMenu }: IPageProps) {
 					<div>
 						<p>Thông Tin Kinh Doanh</p>
 						<h3>CỬA HÀNG ĐIỆN THOẠI Apollo zone</h3>
-						<p>Địa chỉ: 100 Luỹ Bán Bích, P. Tân Thành, Q. Tân Phú. HCM</p>
+						<p>Địa chỉ: Công viên phầm mềm Quang Trung</p>
 						<p>Hotline: <a href="tel:84979407051">0979407051</a></p>
 						<p><strong>MST/ĐKKD/QĐTL</strong>: 8737607778-001</p>
 						<p>Đăng ký lần đầu: Ngày 02 tháng 03 năm 2022</p>
-						<p>Điện thoại: 0776416267</p>
+						<p>Điện thoại: 0979407051</p>
 					</div>
 				</div>
 			</div>

@@ -9,7 +9,7 @@ export default function FooterAbout({companyTitle}: {companyTitle?: string}) {
 				<p className='title'>{title}</p>
 			</div>
 			<div className='page-footer__disclaimer'>
-				Đia chỉ:  100 Luỹ Bán Bích,P. Tân Thành, Q. Tân Phú, TP. HCM<br/>
+				Đia chỉ:  Công viên phầm mềm Quang Trung<br/>
 				Hotline : 0979407051<br />
 				Email: lienhe@apollozone.com.vn<br />
 				THỜI GIAN MỞ CỬA:<br />

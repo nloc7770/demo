@@ -41,18 +41,18 @@ export default function IndexPage({products, mainMenu, footerMenu, basicSettings
 				columns={[
 					{
 						icon:  "",
-						title: 'Does not slip in the hands',
-						comment: 'Anti-slip coating - for reliability.'
+						title: 'Giao hàng toàn quốc',
+						comment: 'Miễn phí giao hàng'
 					},
 					{
 						icon: "",
-						title: 'Extra phone protection',
-						comment: 'Anti-slip coating - for reliability.'
+						title: 'Đổi trả 1 đổi 1',
+						comment: 'Trong vòng 15 ngày'
 					},
 					{
 						icon:  "",
-						title: 'Looks nice',
-						comment: 'With our cases your phone look even better than without.'
+						title: 'Cam kết bảo hành',
+						comment: 'Trong vòng 12 tháng'
 					},
 				]}
 				fullWidth={true}
@@ -119,7 +119,8 @@ function 	MainPageSlider() {
 			'useFilling': true,
 			'fillingColor': '#000000',
 			'fillingOpacity': 0.4
-		}
+		},
+	
 	];
 
 	return (
