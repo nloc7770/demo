@@ -51,7 +51,7 @@ function Product2Cart({ product }: { product: IProduct }) {
 					className='btn btn-action'
 					onClick={onAddToCart}
 				>
-					<FontAwesomeIcon icon={faCartPlus} /> Add to cart
+					<FontAwesomeIcon icon={faCartPlus} /> Thêm vào giỏ hàng
 				</button>
 				: <span className={'text-muted'}>Hết hàng</span>
 			}
