@@ -9,6 +9,7 @@ import {IMenuItem} from '../@types/components';
 import SwiperSlider from '../components/SwiperSlider';
 import mobileSlider1Img from '../assets/mobile-slider-1.png';
 import mobileSlider2Img from '../assets/mobile-slider-2.png';
+import mobileSlider3Img from '../assets/mobile-slider-3.png';
 // import CoverTextInCenter from '../components/CoverTextInCenter';
 // import bgImg from '../assets/cover-bg.jpeg';
 // import bgPortraitImg from '../assets/cover-bg-portrait.jpg';
@@ -113,6 +114,15 @@ function 	MainPageSlider() {
 		},
 		{
 			'img': mobileSlider2Img.src,
+			'link': '',
+			'caption': '',
+			'captionPosition': 'bottom',
+			'useFilling': true,
+			'fillingColor': '#000000',
+			'fillingOpacity': 0.4
+		},
+		{
+			'img': mobileSlider3Img.src,
 			'link': '',
 			'caption': '',
 			'captionPosition': 'bottom',
