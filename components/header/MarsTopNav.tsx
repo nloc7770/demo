@@ -17,7 +17,7 @@ export default function MarsTopNav() {
 				</div>
 				<div className={'mars-top-nav__note'}>
 					<p>
-						Mở cửa vào lúc 7:00 - 22:00<FontAwesomeIcon icon={faShippingFast} className={'text-theme-color ms-1'} />
+						Hỗ trợ 24/7<FontAwesomeIcon icon={faShippingFast} className={'text-theme-color ms-1'} />
 					</p>
 				</div>
 				<ul className={'mars-top-nav__menu list-unstyled'}>

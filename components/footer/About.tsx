@@ -13,7 +13,7 @@ export default function FooterAbout({companyTitle}: {companyTitle?: string}) {
 				Hotline : 0979407051<br />
 				Email: lienhe@apollozone.com.vn<br />
 				THỜI GIAN MỞ CỬA:<br />
-				Từ: 7:00-22:00 (Các ngày trong tuần)<br />
+				Hỗ trợ 24/7<br />
 			</div>
 		</>
 	);
